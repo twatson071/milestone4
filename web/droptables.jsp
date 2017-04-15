@@ -12,7 +12,7 @@
     <body>
         <nav>
             <div class="navbar navbar-default">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="navbar-header">
                         <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapseable" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
@@ -45,9 +45,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-8">
-                        
+                    <div class="col-xs-12 col-sm-4">
+                        <a href="/Group1Milestone4/insertdata.jsp">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-heading">
+                                    <h3>Insert Data</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <i class="fa fa-4x fa-keyboard-o"></i>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <a href="/Group1Milestone4/displaydata.jsp">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-heading">
+                                    <h3>Display Data</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <i class="fa fa-4x fa-file-text-o"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    
                 </div>
             </div>
         </main>
