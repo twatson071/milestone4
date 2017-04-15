@@ -1,4 +1,8 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="oracle.jdbc.*, java.io.IOException, java.io.PrintWriter, 
+        javax.servlet.ServletException, javax.servlet.annotation.WebServlet,
+        javax.servlet.http.HttpServlet, javax.servlet.http.HttpServletRequest, 
+        javax.servlet.http.HttpServletResponse, java.sql.*, oracle.jdbc.*" 
+        contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +14,11 @@
               
     </head>
     <body>
+        <%!
+            private static ResultSet rset;
+            private static int colCount;
+            private static int records = 0;
+        %>
         <nav>
             <div class="navbar navbar-default">
                 <div class="container">
@@ -20,7 +29,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/Group1Milestone4/">Group 1 Milestone 4</a>
+                        <a class="navbar-brand" href="/Group1Milestone4/"><i class="fa fa-users"></i> Group 1 Milestone 4</a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbar-collapseable">
                         <ul class="nav navbar-nav navbar-right">
@@ -71,7 +80,30 @@
                     </div>
                 </div>
                 <div class="row">
-                    
+                    <%
+                    try{
+                        DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+                        Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "student1", "pass");
+
+                        Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+                        System.out.println("Connection established - now executing SELECT");
+                        rset = stmt.executeQuery("SELECT * FROM Address_Book ORDER BY ID");
+                        colCount = rset.getMetaData().getColumnCount();
+
+                    } catch(java.lang.Exception e){
+                        e.printStackTrace();
+                    }
+
+                    try{
+                        while(rset.next()) {%>
+                        <p><%= rset.getString(1) %>: <%= rset.getString(2) %> <%= rset.getString(3) %>, <%= rset.getString(4) %> </p>
+                        <%} 
+                    } catch (java.lang.Exception ex) {
+                        // ex.printStackTrace();
+                    }
+
+                    %>
                 </div>
             </div>
         </main>

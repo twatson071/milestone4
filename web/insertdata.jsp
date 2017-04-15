@@ -1,4 +1,8 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="oracle.jdbc.*, java.io.IOException, java.io.PrintWriter, 
+        javax.servlet.ServletException, javax.servlet.annotation.WebServlet,
+        javax.servlet.http.HttpServlet, javax.servlet.http.HttpServletRequest, 
+        javax.servlet.http.HttpServletResponse, java.sql.*, oracle.jdbc.*" 
+        contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +14,18 @@
               
     </head>
     <body>
+        <jsp:useBean id='first' class='finalbeans.DatabaseBean' />
+        <%!
+            private static ResultSet rset;
+            private static int colCount;
+            private static int records = 0;
+        %>
+        <jsp:setProperty name='first' property='prodName' param='prodName' />
+        <jsp:setProperty name='first' property='prodSKU' param='prodSKU' />
+        <jsp:setProperty name='first' property='prodPrice' param='prodPrice' />
+        <jsp:setProperty name='first' property='prodCat' param='prodCat' />
+        ${first.storeBean()}
+        
         <nav>
             <div class="navbar navbar-default">
                 <div class="container">
@@ -20,7 +36,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/Group1Milestone4/">Group 1 Milestone 4</a>
+                        <a class="navbar-brand" href="/Group1Milestone4/"><i class="fa fa-users"></i> Group 1 Milestone 4</a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbar-collapseable">
                         <ul class="nav navbar-nav navbar-right">
@@ -71,7 +87,25 @@
                     </div>
                 </div>
                 <div class="row">
-                    
+                    <form action="insertdata.jsp" method="POST">
+                        <label for="prodName">Product Name: </label>
+                        <input style="margin-bottom: 20px" type="text" name="prodName">
+                        <br>
+
+                        <label for="prodSKU">Product SKU: </label>
+                        <input style="margin-bottom: 20px" type="text" name="prodSKU">
+                        <br>
+
+                        <label for="prodPrice">Product Price: </label>
+                        <input style="margin-bottom: 20px" type="text" name="prodPrice">
+                        <br>
+                        
+                        <label for="prodCat">Product Category: </label>
+                        <input style="margin-bottom: 20px" type="text" name="prodCat">
+                        <br>
+
+                        <input type="Submit">
+                    </form>
                 </div>
             </div>
         </main>
