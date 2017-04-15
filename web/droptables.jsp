@@ -25,8 +25,8 @@
                     <div class="collapse navbar-collapse" id="navbar-collapseable">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="active"><a href="/Group1Milestone4/droptables.jsp">Drop Tables</a></li>
-                            <li><a href="/Group1Milestone4/">Insert Data</a></li>
-                            <li><a href="/Group1Milestone4/">Display Data</a></li>
+                            <li><a href="/Group1Milestone4/insertdata.jsp">Insert Data</a></li>
+                            <li><a href="/Group1Milestone4/displaydata.jsp">Display Data</a></li>
                         </ul>
                     </div>
                 </div>
