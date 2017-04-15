@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +24,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navbar-collapseable">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/Group1Milestone4/droptables.jsp">Drop Tables</a></li>
+                            <li class="active"><a href="/Group1Milestone4/droptables.jsp">Drop Tables</a></li>
                             <li><a href="/Group1Milestone4/">Insert Data</a></li>
                             <li><a href="/Group1Milestone4/">Display Data</a></li>
                         </ul>
@@ -44,25 +45,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="panel panel-default text-center">
-                            <div class="panel-heading">
-                                <h3>Insert Data</h3>
-                            </div>
-                            <div class="panel-body">
-                                <i class="fa fa-4x fa-file-o"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="panel panel-default text-center">
-                            <div class="panel-heading">
-                                <h3>Display Data</h3>
-                            </div>
-                            <div class="panel-body">
-                                <i class="fa fa-4x fa-file-text-o"></i>
-                            </div>
-                        </div>
+                    <div class="col-xs-12 col-sm-8">
+                        
                     </div>
                 </div>
             </div>
