@@ -87,21 +87,22 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form action="insertdata.jsp" method="POST">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+                    <form action="insertdata.jsp" method="POST" class="form-group">
                         <label for="prodName">Product Name: </label>
-                        <input style="margin-bottom: 20px" type="text" name="prodName">
+                        <input style="margin-bottom: 20px" type="text" name="prodName" class="form-control">
                         <br>
 
                         <label for="prodSKU">Product SKU: </label>
-                        <input style="margin-bottom: 20px" type="text" name="prodSKU">
+                        <input style="margin-bottom: 20px" type="text" name="prodSKU" class="form-control">
                         <br>
 
                         <label for="prodPrice">Product Price: </label>
-                        <input style="margin-bottom: 20px" type="text" name="prodPrice">
+                        <input style="margin-bottom: 20px" type="text" name="prodPrice" class="form-control">
                         <br>
                         
                         <label for="prodCat">Product Category: </label>
-                        <input style="margin-bottom: 20px" type="text" name="prodCat">
+                        <input style="margin-bottom: 20px" type="text" name="prodCat" class="form-control">
                         <br>
 
                         <input type="Submit">
