@@ -34,7 +34,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navbar-collapseable">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="/Group1Milestone4/droptables.jsp">Drop Tables</a></li>
+                            <li class="active"><a href="#" data-toggle="modal" data-target="#droptables">Drop Tables</a></li>
                             <li><a href="/Group1Milestone4/insertdata.jsp">Insert Data</a></li>
                             <li><a href="/Group1Milestone4/displaydata.jsp">Display Data</a></li>
                         </ul>
@@ -81,13 +81,37 @@
                     </div>
                 </div>
                 <div class="row">
-                    
+                    <div class="well text-center">
+                        <h2>The table has been dropped.</h2>
+                    </div>
                 </div>
             </div>
         </main>
         <footer>
-            
+            <!-- Modal -->
+            <div class="modal fade" id="droptables" tabindex="-1" role="dialog" aria-labelledby="droptablesLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="droptablesLabel">Drop Table</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h3>Are you sure you want to drop the table?</h3>
+                    <p>This will also remove all data that you have entered. The table will be recreated upon entering new data.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <a href="droptables.jsp" class="btn btn-primary">Drop Table</a>
+                  </div>
+                </div>
+              </div>
+            </div>
         </footer>
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
