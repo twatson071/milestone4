@@ -79,31 +79,70 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <%
-                    try{
-                        DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-                        Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "student1", "pass");
+                <div class="row well">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Product Name
+                                </th>
+                                <th>
+                                    Product SKU
+                                </th>
+                                <th>
+                                    Product Price
+                                </th>
+                                <th>
+                                    Product Category
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                            try{
+                                DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+                                Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "student1", "pass");
 
-                        Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                                Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-                        System.out.println("Connection established - now executing SELECT");
-                        rset = stmt.executeQuery("SELECT * FROM Address_Book ORDER BY ID");
-                        colCount = rset.getMetaData().getColumnCount();
+                                System.out.println("Connection established - now executing SELECT");
+                                rset = stmt.executeQuery("SELECT * FROM BD_PRODUCTS ORDER BY ID");
+                                colCount = rset.getMetaData().getColumnCount();
 
-                    } catch(java.lang.Exception e){
-                        e.printStackTrace();
-                    }
+                            } catch(java.lang.Exception e){
+                                e.printStackTrace();
+                            }
 
-                    try{
-                        while(rset.next()) {%>
-                        <p><%= rset.getString(1) %>: <%= rset.getString(2) %> <%= rset.getString(3) %>, <%= rset.getString(4) %> </p>
-                        <%} 
-                    } catch (java.lang.Exception ex) {
-                        // ex.printStackTrace();
-                    }
+                            try{
+                                while(rset.next()) {%>
+                                <tr>
+                                    <td>
+                                        <%= rset.getString(1) %>
+                                    </td>
+                                    <td>
+                                        <%= rset.getString(2) %>
+                                    </td>
+                                    <td>
+                                        <%= rset.getString(3) %>
+                                    </td>
+                                    <td>
+                                        <%= rset.getString(4) %>
+                                    </td>
+                                    <td>
+                                        <%= rset.getString(5) %>
+                                    </td>
+                                </tr>
+                                <%} 
+                            } catch (java.lang.Exception ex) {
 
-                    %>
+                            }
+
+                            %>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>
