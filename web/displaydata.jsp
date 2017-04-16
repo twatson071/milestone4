@@ -109,7 +109,7 @@
                                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
                                 System.out.println("Connection established - now executing SELECT");
-                                rset = stmt.executeQuery("SELECT * FROM BD_PRODUCTS ORDER BY ID");
+                                rset = stmt.executeQuery("SELECT DISTINCT * FROM BD_PRODUCTS ORDER BY ID");
                                 colCount = rset.getMetaData().getColumnCount();
 
                             } catch(java.lang.Exception e){
